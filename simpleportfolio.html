@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio - Thalapathy</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('https://whitescreen.online/image/pink-background.png') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+    }
+
+    .header {
+      background-color: lightseagreen;
+      text-align: center;
+      padding: 20px;
+      font-size: 2em;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 50px 20px;
+    }
+
+    .intro, .about {
+      max-width: 700px;
+      text-align: center;
+      font-size: 1.8rem;
+      color: navy;
+      margin-bottom: 30px;
+      transition: all 0.5s ease-in-out;
+    }
+
+    .intro {
+      display: block;
+    }
+
+    .about {
+      display: none;
+    }
+
+    .main-img, .about-img {
+      margin: 20px auto;
+      border: 5px solid skyblue;
+      border-radius: 50%;
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .about-img {
+      display: none;
+      border-radius: 25px;
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      background-color: #fff;
+      color: brown;
+      border: 2px solid brown;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 15px;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: brown;
+      color: white;
+    }
+
+    .footer {
+      background-color: lightseagreen;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">THALAPATHY</div>
+
+  <div class="container">
+    <div class="intro" id="words">
+      <b>
+        HI ALL,<br />
+        I AM THALAPATHY<br />
+        ACTOR
+      </b>
+      <br />
+      <button onclick="update()">ABOUT</button>
+    </div>
+
+    <div class="about" id="wordshidden">
+      <b>
+        MY DEARS,<br />
+        I AM THALAPATHY<br />
+        ALSO A POLITICIAN, I AM READY TO SERVE SOCIETY
+      </b>
+    </div>
+
+    <img
+      id="shownimage"
+      class="main-img"
+      src="https://images.deccanherald.com/deccanherald%2F2024-02%2Fd70b9696-42a6-40da-a666-5f4dbdbd46cb%2FThalpathy_vijay.jpeg?auto=format%2Ccompress&fmt=webp&fit=max&format=webp&q=70&w=400&dpr=2"
+      alt="Thalapathy Vijay"
+    />
+
+    <img
+      id="hiddenimage"
+      class="about-img"
+      src="https://www.cinejosh.com/newsimg/newsmainimg/latest-update-on-thalapathy-68_b_0210230845.jpg"
+      alt="Thalapathy Update"
+    />
+  </div>
+
+  <!-- Optional Footer -->
+  <div class="footer">
+    Contact: name00000@gmail.com
+  </div>
+
+  <script>
+    function update() {
+      document.getElementById("words").style.display = "none";
+      document.getElementById("shownimage").style.display = "none";
+      document.getElementById("wordshidden").style.display = "block";
+      document.getElementById("hiddenimage").style.display = "block";
+    }
+  </script>
+</body>
+</html>

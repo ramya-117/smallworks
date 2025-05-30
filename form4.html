@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <link rel="stylesheet" href="cssstyle.css">
+    <style>
+        /* Reset basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and background */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f2f5;
+    color: #333;
+    padding: 20px;
+}
+
+/* Navigation bar */
+nav {
+    background-color: #004080;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 30px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 16px;
+    transition: background 0.3s, color 0.3s;
+}
+
+nav a:hover {
+    background-color: #ffffff;
+    color: #004080;
+    border-radius: 4px;
+}
+
+/* Heading */
+h1 {
+    margin-bottom: 20px;
+    color: #004080;
+    font-size: 2em;
+}
+
+/* Form styles */
+form {
+    max-width: 1200px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Fieldsets */
+fieldset {
+    border: 2px solid #004080;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+legend {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #004080;
+    padding: 0 10px;
+}
+
+/* Tables inside fieldsets */
+fieldset table {
+    width: 100%;
+    border-spacing: 15px;
+}
+
+td {
+    vertical-align: top;
+    padding: 5px 0;
+    font-size: 0.95em;
+}
+
+/* Inputs and selects */
+input[type="text"],
+input[type="date"],
+input[type="file"],
+select {
+    width: 95%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+select:focus {
+    border: 1px solid #004080;
+    outline: none;
+}
+
+/* Radio buttons and checkbox area */
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* Buttons for language check */
+input[type="button"] {
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    border: 1px solid #999;
+    background-color: #f2f2f2;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    form {
+        padding: 15px;
+    }
+
+    fieldset table,
+    td {
+        display: block;
+        width: 100%;
+    }
+
+    input[type="text"],
+    select {
+        width: 100%;
+    }
+}
+
+    </style>
+
+</head>
+<body>
+    <nav>
+    <ul>
+        <a href ="form.html"> home</a>
+        <a href ="form.html"> about us</a>
+        <a href ="form.html"> login</a>
+        <a href ="form.html"> your details</a>
+
+    </ul>
+</nav>
+    <center>
+        <h1>Application Form </h1>
+    </center>
+    <form>
+        <fieldset >
+            <legend>Personal Details</legend>
+            <table>
+                <colgroup>
+                <col width="300px">
+                <col width="300px">
+                <col width="300px">
+                <col width="300px"></colgroup>
+
+                <tr>
+                    <td>Applicant's Full name</td>
+                    <td>
+                        <select>
+                            <option value ="">--select--</option>
+                            <option value ="">Mr</option>
+                            <option value ="">Mrs</option>
+                            <option value ="">Miss</option>
+                        </select>
+                        
+                            <input type="text" placeholder="enter applicant  name">
+                        </td>
+                    
+                       
+                    </td>
+                   
+                
+                    <td>Care Of</td>
+                    <td>
+                        <input type ="radio" name="care of">Parents
+                        <input type ="radio" name="care of">Guardian
+                    </td>
+                    
+                
+                <tr>
+                    <td>Father's Name</td>
+                    <td>
+                        <select disabled>
+                            <option value="mr" selected>Mr.</option>
+                        </select>
+                        <input type="text" placeholder="Enter Father's Name">
+                    </td>
+                
+                    <td>Mother's Name</td>
+                    <td>
+                        <select disabled>
+                            <option value="mrs" selected>Mrs.</option>
+                        </select>
+                        <input type="text" placeholder="Enter Mother's Name">
+                    </td>
+                </tr>
+                
+                
+                <tr>
+                    <td>Gender</td>
+                    <td>
+                        <input type = "radio" name ="Gender">Male
+                        <input type = "radio" name ="Gender">Female
+                        <input type = "radio" name ="Gender">Others
+                    
+                    </td>
+
+                    <td>Date Of Birth</td>
+                    <td>
+                        <input type ="date">
+                    </td>
+                   
+                    
+                </tr>
+                <tr>
+                    <td>Marital status</td>
+                    <td>
+                        <select>
+                            <option value ="">--select--</option>
+                            <option value ="">Married</option>
+                            <option value ="">Unmarried</option>
+                        </select></td>
+                    <td>Catogery</td>
+                    <td>
+                        <select>
+                            <option value ="">--select--</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Handicapped</td>
+                    <td>
+                        <input type="radio" name ="Handicapped">Yes
+                        <input type="radio" name ="Handicapped">No
+                    </td>
+                    <td>Ex-Serviceman</td>
+                    <td>
+                        <input type="radio" name ="Ex-Serviceman">Yes
+                        <input type="radio" name ="Ex-Serviceman">No
+                    </td>
+                    
+                    
+                </tr>
+                <tr>
+                    <td>EWS</td>
+                    <td>
+                        <input type="radio" name ="EWS">Yes
+                        <input type="radio" name ="EWS">No
+                    </td>
+                    <td>Religion</td>
+                    <td>
+                        <select>
+                            <option value ="">--select--</option>
+                        </select>
+                    </td>
+                    
+                </tr>
+            </table>
+        </fieldset>
+        <fieldset>
+            <legend>Contact Details</legend>
+            <table>
+                <colgroup>
+                <col width ="300px">
+                <col width ="300px">
+                <col width ="300px">
+                <col width ="300px">
+                
+
+            </colgroup>
+            <tr>
+                <td>Mobile Number</td>
+                <td>
+                    <input type = "text">
+                </td>
+                <td>Email Id</td>
+                <td> 
+                    <input type ="text">
+                </td>
+            </tr>
+            <tr>
+                <td>Address line1</td>
+                <td>
+                    <input type = "text">
+                </td>
+                <td>Address line 2</td>
+                <td>
+                    <input type = "text">
+                </td>
+
+                
+            </tr>
+            <tr>
+                <td>city</td>
+                <td>
+                    <input type ="text">
+                </td>
+                <td>State</td>
+                <td>
+                    <select>
+                        <option value="">--select--</option>
+                    </select>
+                </td>
+            </tr>
+            
+            </tr>
+            
+            </table>
+        </fieldset>
+        <fieldset>
+            <lengend>Contact Details</lengend>
+            <table>
+                <colgroup>
+                    <col width ="300px">
+                    <col width ="300px">
+                    <col width ="300px">
+                    <col width ="300px">
+            <tr>
+                <td>Mobile Number</td>
+                <td>
+                    <input type ="text">
+                </td>
+            
+            <td>Email ID</td>
+                <td>
+                    <input type ="text">
+                </td>
+            </tr>
+            <tr>
+                <td>Address line 1</td>
+                <td>
+                    <input type ="text">
+                </td>
+                <td>Address line 1</td>
+                <td>
+                    <input type ="text">
+                </td>
+            </tr>
+            <tr>
+                <td>city</td>
+                <td>
+                    <input type ="text">
+                </td>
+                <td>State</td>
+                <td>
+                    <select>
+                        <option value="">--select--</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Pincode</td>
+                <td>
+                    <input type ="text">
+                </td>
+            </tr>
+
+
+        </table>
+        </fieldset>
+        <fieldset>
+            <legend>Qualification Details</legend>
+            <table>
+            <colgroup>
+                <col width ="300px">
+                <col width ="300px">
+                <col width ="300px">
+                <col width ="300px">
+                <col width ="300px">
+                <col width ="300px">
+                <col width ="300px">
+                <tr>
+                    <td>Sr no</td>
+                    <td>Qualification</td>
+                    <td>Board/University</td>
+                    <td>Passing Year</td>
+                    <td>Max Mark</td>
+                    <td>Mark Obtained</td>
+                    <td>Percentage</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>
+                        <select>
+                            <option value="">--select--</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type ="text">
+                    </td>
+                    <td>
+                        <input type ="text">
+                    </td>
+                    <td>
+                        <input type ="text">
+                    </td>
+                    <td>
+                        <input type ="text">
+                    </td>
+                    <td>
+                        <input type="text">
+                    </td>
+                    <td>
+                        <input type ="text">
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>
+                        <select>
+                            <option value="">--select--</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type ="text">
+                    </td>
+                    <td>
+                        <input type ="text">
+                    </td>
+                    <td>
+                        <input type ="text">
+                    </td>
+                    <td>
+                        <input type ="text">
+                    </td>
+                    <td>
+                        <input type="text">
+                    </td>
+                    <td>
+                        <input type ="text">
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>
+                        <select>
+                            <option value="">--select--</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type ="text">
+                    </td>
+                    <td>
+                        <input type ="text">
+                    </td>
+                    <td>
+                        <input type ="text">
+                    </td>
+                    <td>
+                        <input type ="text">
+                    </td>
+                    <td>
+                        <input type="text">
+                    </td>
+                    <td>
+                        <input type ="text">
+                    </td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>
+                        <select>
+                            <option value="">--select--</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type ="text">
+                    </td>
+                    <td>
+                        <input type ="text">
+                    </td>
+                    <td>
+                        <input type ="text">
+                    </td>
+                    <td>
+                        <input type ="text">
+                    </td>
+                    <td>
+                        <input type="text">
+                    </td>
+                    <td>
+                        <input type ="text">
+                    </td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>
+                        <select>
+                            <option value="">--select--</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type ="text">
+                    </td>
+                    <td>
+                        <input type ="text">
+                    </td>
+                    <td>
+                        <input type ="text">
+                    </td>
+                    <td>
+                        <input type ="text">
+                    </td>
+                    <td>
+                        <input type="text">
+                    </td>
+                    <td>
+                        <input type ="text">
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+        <fieldset>
+            <legend>
+                Knowledge Languagee
+            </legend>
+            <table>
+                <colgroup>
+                    <col width ="300px">
+                    <col width ="300px">
+                    <col width ="300px">
+                    <col width ="300px">
+                </colgroup>
+                <tr>
+                    <td>
+                        Language
+                    </td>
+                    <td>
+                        Reading
+                    </td>
+                    <td>
+                        Writing
+                    </td>
+                    <td>
+                        Spoken
+                    </td>
+                    <tr>
+                        <td>Hindi</td>
+                        <td>
+                            <input type ="button">
+                        </td>
+                        <td>
+                            <input type ="button">
+                        </td>
+                        <td>
+                            <input type ="button">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>English</td>
+                        <td>
+                            <input type ="button">
+                        </td>
+                        <td>
+                            <input type ="button">
+                        </td>
+                        <td>
+                            <input type ="button">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Urdu</td>
+                        <td>
+                            <input type ="button">
+                        </td>
+                        <td>
+                            <input type ="button">
+                        </td>
+                        <td>
+                            <input type ="button">
+                        </td>
+                    </tr>
+                </tr>
+
+
+            </table>
+            
+        </fieldset>
+        <fieldset>
+            <legend>Identification Details</legend>
+            <table>
+                <tr>
+
+                    <td>aadahar caed Number</td>
+                    <td>
+                        <input type="text">
+                    </td>
+                    <td>PANcaed Number</td>
+                    <td>
+                        <input type="text">
+                    </td>
+                    <tr>
+                        <td>
+                            Upload Photo
+                        </td>
+                        <td>
+                            <input type ="file">
+                        </td>
+                        <td>
+                            Upload Signature
+                        </td>
+                        <td>
+                            <input type ="file">
+                        </td>
+                    </tr>
+
+
+                </tr>
+            </table>
+        </fieldset>
+       <center> <button>
+            submit
+        </button>
+        <button>
+            reset
+        </button>
+    </center>
+
+    </form>
+    
+</body>
+</html>

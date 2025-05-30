@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StreamFlix - Unlimited Entertainment</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://assets.nflxext.com/ffe/siteui/vlv3/9d3533b2-0e2b-40b2-95e0-ecd7979cc88b/a3873901-5b7c-46eb-b9fa-12fea5197bd3/IN-en-20240311-popsignuptwoweeks-perspective_alpha_website_large.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            min-height: 100vh;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+        }
+        
+        .logo {
+            color: #e50914;
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .signin-btn {
+            background-color: #e50914;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .signin-btn:hover {
+            background-color: #f40612;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero h2 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            font-weight: normal;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        .email-form {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .email-input {
+            padding: 15px;
+            width: 400px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        .get-started-btn {
+            background-color: #e50914;
+            color: white;
+            border: none;
+            padding: 0 20px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .get-started-btn:hover {
+            background-color: #f40612;
+        }
+        
+        .movie-row {
+            margin: 50px 0;
+            padding: 0 50px;
+        }
+        
+        .movie-row h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .movie-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 15px;
+            padding: 10px 0;
+            scrollbar-width: none; /* Firefox */
+        }
+        
+        .movie-container::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera */
+        }
+        
+        .movie-card {
+            min-width: 200px;
+            height: 300px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+            position: relative;
+        }
+        
+        .movie-card:hover {
+            transform: scale(1.05);
+            z-index: 1;
+        }
+        
+        .movie-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .movie-title {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            padding: 10px;
+            font-weight: bold;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .movie-card:hover .movie-title {
+            opacity: 1;
+        }
+        
+        footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 30px 50px;
+            margin-top: 50px;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 20px;
+            }
+            
+            .hero {
+                padding: 50px 20px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.3rem;
+            }
+            
+            .email-form {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .email-input {
+                width: 100%;
+                max-width: 400px;
+            }
+            
+            .movie-row {
+                padding: 0 20px;
+            }
+            
+            .movie-card {
+                min-width: 150px;
+                height: 225px;
+            }
+        }
+        /* Center the entire section */
+.movie-row {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto; /* Horizontally center */
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* Movie row heading */
+.movie-row h3 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+    color:white;
+}
+
+/* Flex container for movie cards */
+.movie-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Individual movie card */
+.movie-card {
+    width: 180px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    transition: transform 0.3s;
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+}
+
+/* Movie poster image */
+.movie-card img {
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+    border-bottom: 2px solid white;
+}
+
+/* Movie title text */
+.movie-title {
+    padding: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color:white;
+}
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="#" class="logo">STREAMFLIX</a>
+        <button class="signin-btn">Sign In</button>
+    </nav>
+    
+    <section class="hero">
+        <h1>Endless entertainment starts here</h1>
+        <h2>Plans from ₹149/month</h2>
+        <p>Cancel or switch plans anytime</p>
+        
+        <div class="email-form">
+            <input type="email" class="email-input" placeholder="Email address">
+            <button class="get-started-btn">Get Started &gt;</button>
+        </div>
+    </section>
+    <center>
+    <section class="movie-row">
+        <h3>Popular on StreamFlix</h3>
+        <div class="movie-container">
+            <div class="movie-card">
+                <img src="https://m.media-amazon.com/images/M/MV5BZWMyYzFjYTYtNTRjYi00OGExLWE2YzgtOGRmYjAxZTU3NzBiXkEyXkFqcGdeQXVyMzQ0MzA0NTM@._V1_FMjpg_UX1000_.jpg" alt="Spider-Man: No Way Home">
+                <div class="movie-title">Spider-Man: No Way Home</div>
+            </div>
+            <div class="movie-card">
+                <img src="https://m.media-amazon.com/images/M/MV5BMDk4MTdhYzEtODk3OS00ZDBjLWFhNTQtMDI2ODdjNzQzZTA3XkEyXkFqcGdeQXVyMjMxOTE0ODA@._V1_.jpg" alt="Jawan">
+                <div class="movie-title">Jawan</div>
+            </div>
+            <div class="movie-card">
+                <img src="https://4.bp.blogspot.com/-bwyEZ6V1Ss8/Wy4EMrx_coI/AAAAAAAATKE/Pix6jkjPlNUVLJ5IHONwM1QmrEhuKaOHwCLcBGAs/s1600/Vijay-Sarkar-Tamil-Movie-Star-Cast-Release-Date-Songs-Video-Photo-Box-Office-MT-Wiki.jpg" alt="Sarkar">
+                <div class="movie-title">Sarkar</div>
+            </div>
+            <div class="movie-card">
+                <img src="https://cdn.wallpapersafari.com/65/28/ri12eu.jpg" alt="Varisu">
+                <div class="movie-title">Varisu</div>
+            </div>
+            <div class="movie-card">
+                <img src="https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg" alt="The Godfather">
+                <div class="movie-title">The Godfather</div>
+            </div>
+            <div class="movie-card">
+                <img src="https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg" alt="The Dark Knight">
+                <div class="movie-title">The Dark Knight</div>
+            </div>
+             <div class="movie-card">
+                <img src="https://m.media-amazon.com/images/M/MV5BMWMwMGQzZTItY2JlNC00OWZiLWIyMDctNDk2ZDQ2YjRjMWQ0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg" alt="Pulp Fiction">
+                <div class="movie-title">Pulp Fiction</div>
+            </div>
+            <div class="movie-card">
+                <img src="https://m.media-amazon.com/images/M/MV5BNGNhMDIzZTUtNTBlZi00MTRlLWFjM2ItYzViMjE3YzI5MjljXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg" alt="Fight Club">
+                <div class="movie-title">Fight Club</div>
+            </div>
+            <div class="movie-card">
+                <img src="https://m.media-amazon.com/images/M/MV5BMTU2NjA1ODgzMF5BMl5BanBnXkFtZTgwMTM2MTI4MjE@._V1_.jpg" alt="John Wick">
+                <div class="movie-title">John Wick</div>
+            </div>
+            <div class="movie-card">
+                <img src="https://m.media-amazon.com/images/M/MV5BNGVjNWI4ZGUtNzE0MS00YTJmLWE0ZDctN2ZiYTk2YmI3NTYyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg" alt="Joker">
+                <div class="movie-title">Joker</div>
+            </div>
+        </div>
+    </section>
+    </center>
+    <center>
+    <section class="movie-row">
+        <h3>Trending Now</h3>
+        <div class="movie-container">
+            <div class="movie-card">
+                <img src="https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg" alt="The Shawshank Redemption">
+                <div class="movie-title">The Shawshank Redemption</div>
+            </div>
+            <div class="movie-card">
+                <img src="https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_.jpg" alt="The Dark Knight">
+                <div class="movie-title">The Dark Knight</div>
+            </div>
+            <div class="movie-card">
+                <img src="https://m.media-amazon.com/images/M/MV5BMWMwMGQzZTItY2JlNC00OWZiLWIyMDctNDk2ZDQ2YjRjMWQ0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg" alt="Pulp Fiction">
+                <div class="movie-title">Pulp Fiction</div>
+            </div>
+            <div class="movie-card">
+                <img src="https://m.media-amazon.com/images/M/MV5BNGNhMDIzZTUtNTBlZi00MTRlLWFjM2ItYzViMjE3YzI5MjljXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg" alt="Fight Club">
+                <div class="movie-title">Fight Club</div>
+            </div>
+            <div class="movie-card">
+                <img src="https://m.media-amazon.com/images/M/MV5BMTU2NjA1ODgzMF5BMl5BanBnXkFtZTgwMTM2MTI4MjE@._V1_.jpg" alt="John Wick">
+                <div class="movie-title">John Wick</div>
+            </div>
+            <div class="movie-card">
+                <img src="https://m.media-amazon.com/images/M/MV5BNGVjNWI4ZGUtNzE0MS00YTJmLWE0ZDctN2ZiYTk2YmI3NTYyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg" alt="Joker">
+                <div class="movie-title">Joker</div>
+            </div>
+             <div class="movie-card">
+                <img src="https://m.media-amazon.com/images/M/MV5BMWMwMGQzZTItY2JlNC00OWZiLWIyMDctNDk2ZDQ2YjRjMWQ0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg" alt="Pulp Fiction">
+                <div class="movie-title">Pulp Fiction</div>
+            </div>
+            <div class="movie-card">
+                <img src="https://m.media-amazon.com/images/M/MV5BNGNhMDIzZTUtNTBlZi00MTRlLWFjM2ItYzViMjE3YzI5MjljXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg" alt="Fight Club">
+                <div class="movie-title">Fight Club</div>
+            </div>
+            <div class="movie-card">
+                <img src="https://m.media-amazon.com/images/M/MV5BMTU2NjA1ODgzMF5BMl5BanBnXkFtZTgwMTM2MTI4MjE@._V1_.jpg" alt="John Wick">
+                <div class="movie-title">John Wick</div>
+            </div>
+            <div class="movie-card">
+                <img src="https://m.media-amazon.com/images/M/MV5BNGVjNWI4ZGUtNzE0MS00YTJmLWE0ZDctN2ZiYTk2YmI3NTYyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg" alt="Joker">
+                <div class="movie-title">Joker</div>
+            </div>
+        </div>
+    </section>
+    </center>
+    <center>
+        
+    <section class="movie-row">
+        <h3>Bollywood Hits</h3>
+        <div class="movie-container">
+            <div class="movie-card">
+                <img src="https://fr.web.img6.acsta.net/pictures/22/12/23/10/56/5401538.jpg" alt="Pathaan">
+                <div class="movie-title">Pathaan</div>
+            </div>
+            <div class="movie-card">
+                <img src="https://th.bing.com/th/id/OIP.5ucoR8R1ObjxuRp9AUIZPQHaLH?rs=1&pid=ImgDetMain" alt="Animal">
+                <div class="movie-title">Animal</div>
+            </div>
+            <div class="movie-card">
+                <img src="https://m.media-amazon.com/images/M/MV5BZjRjOTFkOTktZWUzMi00YzMyLThkMmYtMjEwNmQyNzliYTNmXkEyXkFqcGdeQXVyNzQ1ODk3MTQ@._V1_FMjpg_UX1000_.jpg" alt="RRR">
+                <div class="movie-title">RRR</div>
+            </div>
+            <div class="movie-card">
+                <img src="https://m.media-amazon.com/images/M/MV5BN2EwM2I5OWMtMGQyMi00Zjg1LWJkNTctZTdjYTA4OGUwZjMyXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_FMjpg_UX1000_.jpg" alt="Dangal">
+                <div class="movie-title">Dangal</div>
+            </div>
+            <div class="movie-card">
+                <img src="https://th.bing.com/th/id/OIP.5Q1PO9dSww691NUGIhI5tAHaKf?rs=1&pid=ImgDetMain" alt="KGF: Chapter 2">
+                <div class="movie-title">KGF: Chapter 2</div>
+            </div>
+             <div class="movie-card">
+                <img src="https://m.media-amazon.com/images/M/MV5BMWMwMGQzZTItY2JlNC00OWZiLWIyMDctNDk2ZDQ2YjRjMWQ0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg" alt="Pulp Fiction">
+                <div class="movie-title">Pulp Fiction</div>
+            </div>
+            <div class="movie-card">
+                <img src="https://m.media-amazon.com/images/M/MV5BNGNhMDIzZTUtNTBlZi00MTRlLWFjM2ItYzViMjE3YzI5MjljXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg" alt="Fight Club">
+                <div class="movie-title">Fight Club</div>
+            </div>
+            <div class="movie-card">
+                <img src="https://m.media-amazon.com/images/M/MV5BMTU2NjA1ODgzMF5BMl5BanBnXkFtZTgwMTM2MTI4MjE@._V1_.jpg" alt="John Wick">
+                <div class="movie-title">John Wick</div>
+            </div>
+            <div class="movie-card">
+                <img src="https://m.media-amazon.com/images/M/MV5BNGVjNWI4ZGUtNzE0MS00YTJmLWE0ZDctN2ZiYTk2YmI3NTYyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg" alt="Joker">
+                <div class="movie-title">Joker</div>
+            </div>
+            <div class="movie-card">
+                <img src="https://th.bing.com/th/id/OIP.2XprsF7BusSIXQCF3NBlWwHaLH?rs=1&pid=ImgDetMain">
+                <div class="movie-title">Baahubali 2</div>
+            </div>
+        </div>
+    </section>
+    </center>
+    
+    <footer>
+        <p>© 2024 StreamFlix Clone. All rights reserved.</p>
+    </footer>
+</body>
+</html>

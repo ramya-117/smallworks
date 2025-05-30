@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Paragraph Translator</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f8ff;
+      padding: 20px;
+    }
+
+    #container {
+      max-width: 700px;
+      margin: auto;
+      background-color: white;
+      border: 3px solid #2196F3;
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    textarea, select {
+      width: 100%;
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 5px;
+      border: 2px solid #90caf9;
+      font-size: 16px;
+      resize: vertical;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #2196F3;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #1976D2;
+    }
+
+    label {
+      margin-top: 15px;
+      font-weight: bold;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="container">
+    <h2>Translate Your Paragraph</h2>
+
+    <label for="inputPara">Enter paragraph:</label>
+    <textarea id="inputPara" placeholder="Type your paragraph here..."></textarea>
+
+    <label for="langSelect">Select language:</label>
+    <select id="langSelect">
+      <option value="ta">Tamil</option>
+      <option value="hi">Hindi</option>
+      <option value="fr">French</option>
+      <option value="es">Spanish</option>
+      <option value="de">German</option>
+      <option value="zh-CN">Chinese (Simplified)</option>
+      <option value="ar">Arabic</option>
+      <option value="ja">Japanese</option>
+      <option value="ru">Russian</option>
+      <option value="ml">Malayalam</option>
+    </select>
+
+    <button onclick="translateParagraph()">Translate</button>
+  </div>
+
+  <script>
+    function translateParagraph() {
+      const paragraph = document.getElementById("inputPara").value;
+      const targetLang = document.getElementById("langSelect").value;
+
+      if (!paragraph.trim()) {
+        alert("Please enter a paragraph to translate.");
+        return;
+      }
+
+      // Open Google Translate with pre-filled text
+      const baseUrl = "https://translate.google.com/?sl=auto";
+      const url = `${baseUrl}&tl=${targetLang}&text=${encodeURIComponent(paragraph)}&op=translate`;
+
+      window.open(url, '_blank');
+    }
+  </script>
+
+</body>
+</html>

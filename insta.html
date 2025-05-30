@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Profile</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        
+        .Bio {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .profile {
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            border-radius: 15px;
+            padding: 30px;
+            color: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        table {
+            width: 100%;
+        }
+        
+        tr {
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        td:first-child {
+            font-weight: 600;
+            color: #555;
+            padding-bottom: 5px;
+            display: block;
+        }
+        
+        input[type="text"] {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e1e5ee;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        input[type="text"]:focus {
+            border-color: #6e8efb;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(110, 142, 251, 0.2);
+        }
+        
+        input[type="text"]::placeholder {
+            color: #aaa;
+        }
+        
+        button {
+            background: #6e8efb;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+            width: 100%;
+        }
+        
+        button:hover {
+            background: #5a7bf0;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .profile img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .profile h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .profile h2 {
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 1.6;
+            max-width: 80%;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="Bio">
+            <h2 style="margin-bottom: 20px; color: #444;">Enter Your Information</h2>
+            <table>
+                <tr>
+                    <td>Name:</td>
+                    <td><input type="text" placeholder="Enter your name" id="name"></td>
+                </tr>
+                <tr>
+                    <td>Image URL:</td>
+                    <td><input type="text" placeholder="Enter image URL" id="source"></td>
+                </tr>
+                <tr>
+                    <td>Bio:</td>
+                    <td><input type="text" placeholder="Tell us about yourself" id="bio"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button onclick="updateBio()">Create Profile</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="profile">
+            <h1 id="profileName">Your Name</h1>
+            <img src="https://via.placeholder.com/150" alt="Profile Picture" id="profileImage">
+            <h2 id="profileBio">This is where your bio will appear. Tell people something interesting about yourself!</h2>
+        </div>
+    </div>
+    
+    <script>
+        function updateBio() {
+            // Get input values
+            const name = document.getElementById('name').value;
+            const imageUrl = document.getElementById('source').value;
+            const bio = document.getElementById('bio').value;
+            
+            // Update profile section
+            if (name) document.getElementById('profileName').textContent = name;
+            if (imageUrl) document.getElementById('profileImage').src = imageUrl;
+            if (bio) document.getElementById('profileBio').textContent = bio;
+            
+            // Show confirmation
+            alert('Profile updated successfully!');
+        }
+    </script>
+</body>
+</html>

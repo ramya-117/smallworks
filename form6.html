@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>railway reservation</title>
+    <!-- <link rel="stylesheet" href="railwaystyle.css" -->
+     <style>
+    /* Global body styling */
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        
+        background-color:lightblue;
+    }
+    
+    /* Navigation styling */
+    #navigation {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        background-color: #34495e;
+        position: fixed;
+        top: 50%;
+        left: 20px;
+        transform: translateY(-50%);
+        border-radius: 10px;
+        width: 220px;
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+    }
+    
+    /* Each list item */
+    #navigation li {
+        margin: 10px 0;
+    }
+    
+    /* Link styling */
+    #navigation a {
+        text-decoration: none;
+        color: #ecf0f1;
+        font-size: 18px;
+        padding: 12px 20px;
+        border-radius: 8px;
+        display: block;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+    
+    /* Hover effect - background color change */
+    #navigation a:hover {
+        background-color: #1abc9c;
+        color: #fff;
+        transform: translateX(10px); /* Slide effect */
+    }
+    
+    /* Active state effect - when clicked */
+    #navigation a:active {
+        background-color: #16a085;
+        transform: translateX(5px); /* Slight press effect */
+    }
+    
+    /* Add icons next to the links */
+    #navigation a::before {
+        content: '🔹';
+        margin-right: 8px;
+        font-size: 20px;
+        opacity: 0.8;
+    }
+    
+    /* Active icon opacity on press */
+    #navigation a:active::before {
+        opacity: 1;
+    }
+    
+    /* Optional: Text shadow for extra pop on hover */
+    #navigation a:hover {
+        text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.6);
+    }
+    h1{
+        color:red;
+    }
+</style>
+    
+    
+</head>
+<body>
+    <CENTER>
+    <h1>ONLINE TICKET BOOKING</h1>
+</CENTER>
+   
+        <ul id="navigation">
+            <li><a href="#">Loyalty</a></li>
+            <li><a href="#">ICRTC eWallet</a></li>
+            <li><a href="#">Buses</a></li>
+            <li><a href="#">Ticket Availability</a></li>
+            <li><a href="#">Hotel</a></li>
+            <li><a href="#">Transaction</a></li>
+            <li><a href="#">Train Timing</a></li>
+            <li><a href="#">My Details</a></li>
+        </ul>
+        <form id="signup">
+            name
+            <input type="text">
+            email
+            <input type="text">
+            password
+            <input type="password">
+        <button id="signup1">signup</button>
+    </form>
+    </body>
+    
+   
+</html>
