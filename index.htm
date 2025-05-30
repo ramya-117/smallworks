@@ -1,0 +1,513 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="amazon.html">simple shopping page</a>
+    <a href="calculator.html">calculator</a>
+    <a href="form1.html">form1</a>
+     <a href="form2.html">form2</a>
+      <a href="form3.html">form3</a>
+       <a href="form4.html">form4</a>
+        <a href="form5.html">form5</a>
+         <a href="form6.html">form6</a>
+          <a href="form7.html">form7</a>
+    <a href="simpleportfolio.html">simple portfolio</a>
+    <a href="translator.html">paragraph translator</a>
+    <a href="netfix.html">netfix page simple</a>
+    <a href="qrcode.html">QRcode generator</a>
+    <a href="randomuser.html">randomuser generator</a>
+    <a href="texttospeech.html">text to speech generator</a>
+    <a href="shirt.html">simple dress shop</a>
+    <a href="insta.html">simple insta bio page</a>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Navigator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+     <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+    <style>
+        :root {
+            --primary-color: #4361ee;
+            --secondary-color: #3f37c9;
+            --accent-color: #4cc9f0;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --success-color: #4caf50;
+            --warning-color: #ff9800;
+            --danger-color: #f44336;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f7fa;
+            color: var(--dark-color);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .project-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-icon {
+            height: 120px;
+            background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .project-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-content h3 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+            font-size: 1.3rem;
+        }
+
+        .project-content p {
+            margin-bottom: 15px;
+            color: #666;
+            flex-grow: 1;
+        }
+
+        .project-link {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            text-align: center;
+            transition: var(--transition);
+            font-weight: 500;
+            margin-top: auto;
+        }
+
+        .project-link:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .category-title {
+            margin: 40px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            font-size: 1.5rem;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            background-color: var(--dark-color);
+            color: white;
+            border-radius: var(--border-radius);
+        }
+        .social-box {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      padding: 0;
+      margin: 0;
+    }
+
+    .social-box li a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 60px;
+      height: 60px;
+      font-size: 26px;
+      border-radius: 50%;
+      color: white;
+      background: #1e293b;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    .social-box li a:hover {
+      transform: scale(1.2);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+    }
+
+    .linkedin-icon {
+      background: #0077b5;
+    }
+
+    .instagram-icon {
+      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+    }
+
+    .whatsapp-icon {
+      background: #25d366;
+    }
+
+    .github-icon {
+      background: #333;
+    }
+
+    .mail-icon {
+      background: #ea4335;
+    }
+
+        @media (max-width: 768px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Category colors */
+        .category-form {
+            border-left: 5px solid var(--success-color);
+        }
+        
+        .category-form .project-icon {
+            background: linear-gradient(135deg, #4caf50, #2e7d32);
+        }
+        
+        .category-form .project-link {
+            background-color: #4caf50;
+        }
+        
+        .category-form .project-link:hover {
+            background-color: #2e7d32;
+        }
+        
+        .category-ecommerce {
+            border-left: 5px solid var(--warning-color);
+        }
+        
+        .category-ecommerce .project-icon {
+            background: linear-gradient(135deg, #ff9800, #f57c00);
+        }
+        
+        .category-ecommerce .project-link {
+            background-color: #ff9800;
+        }
+        
+        .category-ecommerce .project-link:hover {
+            background-color: #f57c00;
+        }
+        
+        .category-utility {
+            border-left: 5px solid var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-code"></i> Project Navigator</h1>
+            <p>Quick access to all your HTML/CSS projects</p>
+        </header>
+
+        <h2 class="category-title"><i class="fas fa-shopping-cart"></i> E-Commerce Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card category-ecommerce">
+                <div class="project-icon">
+                    <i class="fas fa-shopping-bag"></i>
+                </div>
+                <div class="project-content">
+                    <h3>Amazon Clone</h3>
+                    <p>A simple shopping page inspired by Amazon's design and functionality.</p>
+                    <a href="amazon.html" class="project-link">View Project</a>
+                </div>
+            </div>
+
+            <div class="project-card category-ecommerce">
+                <div class="project-icon">
+                    <i class="fas fa-tshirt"></i>
+                </div>
+                <div class="project-content">
+                    <h3>Dress Shop</h3>
+                    <p>A simple clothing store page featuring shirt products.</p>
+                    <a href="shirt.html" class="project-link">View Project</a>
+                </div>
+            </div>
+
+            <div class="project-card category-ecommerce">
+                <div class="project-icon">
+                    <i class="fas fa-film"></i>
+                </div>
+                <div class="project-content">
+                    <h3>Netflix Clone</h3>
+                    <p>A simplified version of the Netflix streaming service page.</p>
+                    <a href="netfix.html" class="project-link">View Project</a>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="category-title"><i class="fas fa-wpforms"></i> Form Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card category-form">
+                <div class="project-icon">
+                    <i class="fas fa-file-alt"></i>
+                </div>
+                <div class="project-content">
+                    <h3>Form 1</h3>
+                    <p>The first in a series of form design implementations.</p>
+                    <a href="form1.html" class="project-link">View Project</a>
+                </div>
+            </div>
+
+            <div class="project-card category-form">
+                <div class="project-icon">
+                    <i class="fas fa-file-alt"></i>
+                </div>
+                <div class="project-content">
+                    <h3>Form 2</h3>
+                    <p>Second form design with different styling and layout.</p>
+                    <a href="form2.html" class="project-link">View Project</a>
+                </div>
+            </div>
+
+            <div class="project-card category-form">
+                <div class="project-icon">
+                    <i class="fas fa-file-alt"></i>
+                </div>
+                <div class="project-content">
+                    <h3>Form 3</h3>
+                    <p>Third form variation with additional input types.</p>
+                    <a href="form3.html" class="project-link">View Project</a>
+                </div>
+            </div>
+
+            <div class="project-card category-form">
+                <div class="project-icon">
+                    <i class="fas fa-file-alt"></i>
+                </div>
+                <div class="project-content">
+                    <h3>Form 4</h3>
+                    <p>Fourth form implementation with responsive design.</p>
+                    <a href="form4.html" class="project-link">View Project</a>
+                </div>
+            </div>
+
+            <div class="project-card category-form">
+                <div class="project-icon">
+                    <i class="fas fa-file-alt"></i>
+                </div>
+                <div class="project-content">
+                    <h3>Form 5</h3>
+                    <p>Fifth form design with modern UI elements.</p>
+                    <a href="form5.html" class="project-link">View Project</a>
+                </div>
+            </div>
+
+            <div class="project-card category-form">
+                <div class="project-icon">
+                    <i class="fas fa-file-alt"></i>
+                </div>
+                <div class="project-content">
+                    <h3>Form 6</h3>
+                    <p>Sixth form variation with validation features.</p>
+                    <a href="form6.html" class="project-link">View Project</a>
+                </div>
+            </div>
+
+            <div class="project-card category-form">
+                <div class="project-icon">
+                    <i class="fas fa-file-alt"></i>
+                </div>
+                <div class="project-content">
+                    <h3>Form 7</h3>
+                    <p>Seventh and final form in the series with advanced features.</p>
+                    <a href="form7.html" class="project-link">View Project</a>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="category-title"><i class="fas fa-tools"></i> Utility Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card category-utility">
+                <div class="project-icon">
+                    <i class="fas fa-calculator"></i>
+                </div>
+                <div class="project-content">
+                    <h3>Calculator</h3>
+                    <p>A functional calculator with basic arithmetic operations.</p>
+                    <a href="calculator.html" class="project-link">View Project</a>
+                </div>
+            </div>
+
+            <div class="project-card category-utility">
+                <div class="project-icon">
+                    <i class="fas fa-qrcode"></i>
+                </div>
+                <div class="project-content">
+                    <h3>QR Code Generator</h3>
+                    <p>Generate QR codes from text input with this handy tool.</p>
+                    <a href="qrcode.html" class="project-link">View Project</a>
+                </div>
+            </div>
+
+            <div class="project-card category-utility">
+                <div class="project-icon">
+                    <i class="fas fa-user-friends"></i>
+                </div>
+                <div class="project-content">
+                    <h3>Random User Generator</h3>
+                    <p>Generate random user profiles with various details.</p>
+                    <a href="randomuser.html" class="project-link">View Project</a>
+                </div>
+            </div>
+
+            <div class="project-card category-utility">
+                <div class="project-icon">
+                    <i class="fas fa-language"></i>
+                </div>
+                <div class="project-content">
+                    <h3>Paragraph Translator</h3>
+                    <p>Translate text paragraphs between different languages.</p>
+                    <a href="translator.html" class="project-link">View Project</a>
+                </div>
+            </div>
+
+            <div class="project-card category-utility">
+                <div class="project-icon">
+                    <i class="fas fa-volume-up"></i>
+                </div>
+                <div class="project-content">
+                    <h3>Text to Speech</h3>
+                    <p>Convert written text into spoken words with this generator.</p>
+                    <a href="texttospeech.html" class="project-link">View Project</a>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="category-title"><i class="fas fa-user-circle"></i> Profile Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-icon">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                <div class="project-content">
+                    <h3>Simple Portfolio</h3>
+                    <p>A clean and minimal portfolio page design.</p>
+                    <a href="simpleportfolio.html" class="project-link">View Project</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon">
+                    <i class="fab fa-instagram"></i>
+                </div>
+                <div class="project-content">
+                    <h3>Instagram Bio Page</h3>
+                    <p>A simple Instagram-style profile/bio page.</p>
+                    <a href="insta.html" class="project-link">View Project</a>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <ul class="social-box" style="display: flex;
+      justify-content: center;
+      align-items: center;">
+  <li>
+    <a class="linkedin-icon" href="https://www.linkedin.com/in/gomathi-krishnan-420b74361" target="_blank">
+      <i class="fab fa-linkedin-in"></i>
+    </a>
+  </li>
+  <li>
+    <a class="instagram-icon" href="https://www.instagram.com/mahadevs_puthri" target="_blank">
+      <i class="fab fa-instagram"></i>
+    </a>
+  </li>
+  <li>
+    <a class="whatsapp-icon" href="https://wa.me/9894200436" target="_blank">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+  </li>
+  <li>
+    <a class="github-icon" href="https://github.com/ramya-117" target="_blank">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  <li>
+    <a class="mail-icon" href="mailto:kgomathi2004@gmail.com">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+</ul>
+            
+        </footer>
+    </div>
+</body>
+</html>
